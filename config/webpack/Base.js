@@ -1,6 +1,12 @@
 'use strict';
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
+  template: './public/index.html',
+  filename: 'index.html',
+});
 
 class WebpackBaseConfig {
 
@@ -29,7 +35,11 @@ class WebpackBaseConfig {
     return {
       // TODO: Write webpack configuration
       context: this.srcAbsolutePath,
-      entry: '../dist/index.html',
+      entry: './index.js',
+      output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+      },
       resolve: {
         alias: {
           '@': this.srcAbsolutePath,
@@ -38,7 +48,17 @@ class WebpackBaseConfig {
           'node_modules',
           'bower_components',
         ],
-      }
+      },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {loader: 'babel-loader',}
+          },
+        ]
+      },
+      plugins: [htmlWebpackPlugin],
     };
   }
 }
