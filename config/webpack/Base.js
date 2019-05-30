@@ -28,6 +28,11 @@ class WebpackBaseConfig {
   get defaultConfig() {
     return {
       // TODO: Write webpack configuration
+      resolve: {
+        alias: {
+          '@': this.srcAbsolutePath,
+        }
+      }
     };
   }
 }
