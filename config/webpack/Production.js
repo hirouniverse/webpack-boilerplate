@@ -1,6 +1,6 @@
 'use strict';
 
-const webpack = reuqire('webpack');
+const webpack = require('webpack');
 const WebpackBaseConfig = require('./Base');
 
 class WebpackProdConfig extends WebpackBaseConfig {
@@ -11,4 +11,4 @@ class WebpackProdConfig extends WebpackBaseConfig {
     };
   }
 }
-module.exports = WebpaclProdConfig;
+module.exports = WebpackProdConfig;
