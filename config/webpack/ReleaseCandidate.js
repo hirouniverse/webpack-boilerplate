@@ -9,5 +9,10 @@ class WebpackRCConfig extends WebpackBaseConfig {
     this.config = {
     };
   }
+
+  get env() {
+    return 'rc';
+  }
+  
 }
 module.exports = WebpackRCConfig;

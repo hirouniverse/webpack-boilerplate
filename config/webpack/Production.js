@@ -10,5 +10,10 @@ class WebpackProdConfig extends WebpackBaseConfig {
       // Set extra webpack configuration
     };
   }
+
+  get env() {
+    return 'prod';
+  }
+
 }
 module.exports = WebpackProdConfig;

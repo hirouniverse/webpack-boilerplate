@@ -19,5 +19,10 @@ class WebpackDevConfig extends WebpackBaseConfig {
       ],
     };
   }
+
+  get env() {
+    return 'dev';
+  }
+
 }
 module.exports = WebpackDevConfig;

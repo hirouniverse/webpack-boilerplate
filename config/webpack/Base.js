@@ -14,6 +14,10 @@ class WebpackBaseConfig {
     this._config = {};
   }
 
+  get env() {
+    return 'dev';
+  }
+
   get config() {
     return this._config;
   }
@@ -43,6 +47,7 @@ class WebpackBaseConfig {
       resolve: {
         alias: {
           '@': this.srcAbsolutePath,
+          'config': `${this.srcAbsolutePath}/config/${this.env}.js`,
         },
         modules: [
           'node_modules',

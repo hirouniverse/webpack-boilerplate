@@ -10,5 +10,10 @@ class WebpackStgConfig extends WebpackBaseConfig {
       // Set extra webpack configuration
     };
   }
+
+  get env() {
+    return 'stg';
+  }
+  
 }
 module.exports = WebpackStgConfig;
