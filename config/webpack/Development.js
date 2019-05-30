@@ -15,8 +15,6 @@ class WebpackDevConfig extends WebpackBaseConfig {
         new webpack.HotModuleReplacementPlugin(),
       ],
     };
-
-    this.config.module.rules = this.config.module.rules.concat([{}]);
   }
 }
 module.exports = WebpackDevConfig;
