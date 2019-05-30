@@ -1,4 +1,7 @@
 module.exports = {
+  setupFiles: [
+    '<rootDir>/src/__test__/setup/setupTest.js'
+  ],
   moduleNameMapper: {
     '@': '<rootDir>/src/$1',
   },
@@ -6,6 +9,6 @@ module.exports = {
     'node_modules',
   ],
   transform: {
-    '^.+\\.[jt]sx?$': require.resolve('babel-jest')
+    '^.+\\.[jt]sx?$': require.resolve('babel-jest'),
   },
 };
