@@ -28,10 +28,16 @@ class WebpackBaseConfig {
   get defaultConfig() {
     return {
       // TODO: Write webpack configuration
+      context: this.srcAbsolutePath,
+      entry: '../dist/index.html',
       resolve: {
         alias: {
           '@': this.srcAbsolutePath,
-        }
+        },
+        modules: [
+          'node_modules',
+          'bower_components',
+        ],
       }
     };
   }
