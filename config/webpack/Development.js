@@ -10,6 +10,10 @@ class WebpackDevConfig extends WebpackBaseConfig {
     this.config = {
       // Set extra webpack configuration like;
       devtool: '',
+      devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 3000,
+      },
       entry: '',
       plugins: [
         new webpack.HotModuleReplacementPlugin(),
